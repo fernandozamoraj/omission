@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Omission.Framework", "Core\Omission.Framework.csproj", "{7BDB484D-C8F8-4F0B-9F85-61530D6FCFCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Omission.UnitTests", "Omission.UnitTests\Omission.UnitTests.csproj", "{825E4352-B564-47A4-8BDB-FE8F7000B1F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Omission.WindowsDemo", "Omission.WindowsDemo\Omission.WindowsDemo.csproj", "{A0194880-B472-4EED-9475-4C95F68EA9D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BDB484D-C8F8-4F0B-9F85-61530D6FCFCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BDB484D-C8F8-4F0B-9F85-61530D6FCFCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BDB484D-C8F8-4F0B-9F85-61530D6FCFCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BDB484D-C8F8-4F0B-9F85-61530D6FCFCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{825E4352-B564-47A4-8BDB-FE8F7000B1F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{825E4352-B564-47A4-8BDB-FE8F7000B1F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{825E4352-B564-47A4-8BDB-FE8F7000B1F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{825E4352-B564-47A4-8BDB-FE8F7000B1F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0194880-B472-4EED-9475-4C95F68EA9D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0194880-B472-4EED-9475-4C95F68EA9D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0194880-B472-4EED-9475-4C95F68EA9D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0194880-B472-4EED-9475-4C95F68EA9D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
