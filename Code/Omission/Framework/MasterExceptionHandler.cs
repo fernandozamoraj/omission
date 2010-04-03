@@ -25,9 +25,16 @@ namespace Omission.Framework
         //handled some way or another
         IExceptionHandler _defaultHandler;
 
-        public IExceptionLogger GetDefaultLogger()
+        public IExceptionLogger DefaultLogger
         {
-            return _defaultLogger;
+            get
+            {
+                return _defaultLogger;
+            }
+            set
+            {
+                _defaultLogger = value;
+            }
         }
 
         public IExceptionHandler GetDefaultHandler()
@@ -84,9 +91,14 @@ namespace Omission.Framework
         {
             Log(exception);
 
-            IExceptionHandler handler = _exceptionConfiguration.GetHandler(exception.GetType()) ?? _defaultHandler;
+            ExceptionHandlingResult handlingResult = new ExceptionHandlingResult{ReThrow = false, WasHandled = true};
 
-            ExceptionHandlingResult handlingResult = handler.Handle(exception);
+            if(!_exceptionConfiguration.ShouldIgnoreForHandling(exception.GetType()))
+            {
+                IExceptionHandler handler = _exceptionConfiguration.GetHandler(exception.GetType()) ?? _defaultHandler;
+
+                handlingResult = handler.Handle(exception);
+            }
 
             return handlingResult;
         }

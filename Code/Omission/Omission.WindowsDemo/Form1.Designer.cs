@@ -30,42 +30,52 @@
         {
             this.lblOptions = new System.Windows.Forms.Label();
             this.lbxOptions = new System.Windows.Forms.ListBox();
-            this.btnTest = new System.Windows.Forms.Button();
+            this.btnThrow = new System.Windows.Forms.Button();
+            this.lbxLogEntries = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lblOptions
             // 
             this.lblOptions.AutoSize = true;
-            this.lblOptions.Location = new System.Drawing.Point(34, 35);
+            this.lblOptions.Location = new System.Drawing.Point(12, 36);
             this.lblOptions.Name = "lblOptions";
-            this.lblOptions.Size = new System.Drawing.Size(43, 13);
+            this.lblOptions.Size = new System.Drawing.Size(59, 13);
             this.lblOptions.TabIndex = 0;
-            this.lblOptions.Text = "Options";
+            this.lblOptions.Text = "Exceptions";
             // 
             // lbxOptions
             // 
             this.lbxOptions.FormattingEnabled = true;
-            this.lbxOptions.Location = new System.Drawing.Point(37, 63);
+            this.lbxOptions.Location = new System.Drawing.Point(12, 63);
             this.lbxOptions.Name = "lbxOptions";
-            this.lbxOptions.Size = new System.Drawing.Size(449, 121);
+            this.lbxOptions.Size = new System.Drawing.Size(375, 82);
             this.lbxOptions.TabIndex = 1;
             // 
-            // btnTest
+            // btnThrow
             // 
-            this.btnTest.Location = new System.Drawing.Point(411, 258);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(75, 23);
-            this.btnTest.TabIndex = 2;
-            this.btnTest.Text = "Test";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            this.btnThrow.Location = new System.Drawing.Point(397, 63);
+            this.btnThrow.Name = "btnThrow";
+            this.btnThrow.Size = new System.Drawing.Size(75, 82);
+            this.btnThrow.TabIndex = 2;
+            this.btnThrow.Text = "Throw";
+            this.btnThrow.UseVisualStyleBackColor = true;
+            this.btnThrow.Click += new System.EventHandler(this.btnTest_Click);
+            // 
+            // lbxLogEntries
+            // 
+            this.lbxLogEntries.FormattingEnabled = true;
+            this.lbxLogEntries.Location = new System.Drawing.Point(12, 193);
+            this.lbxLogEntries.Name = "lbxLogEntries";
+            this.lbxLogEntries.Size = new System.Drawing.Size(632, 121);
+            this.lbxLogEntries.TabIndex = 3;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 326);
-            this.Controls.Add(this.btnTest);
+            this.ClientSize = new System.Drawing.Size(656, 431);
+            this.Controls.Add(this.lbxLogEntries);
+            this.Controls.Add(this.btnThrow);
             this.Controls.Add(this.lbxOptions);
             this.Controls.Add(this.lblOptions);
             this.Name = "Form1";
@@ -80,7 +90,8 @@
 
         private System.Windows.Forms.Label lblOptions;
         private System.Windows.Forms.ListBox lbxOptions;
-        private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.Button btnThrow;
+        private System.Windows.Forms.ListBox lbxLogEntries;
     }
 }
 

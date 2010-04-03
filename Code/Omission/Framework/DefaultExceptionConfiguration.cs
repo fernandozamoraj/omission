@@ -11,6 +11,7 @@ namespace Omission.Framework
         Dictionary<string, IExceptionLogger> _loggerEntries;
         Dictionary<Type, IExceptionHandler> _cachedHandlers;
         Dictionary<Type, IExceptionLogger> _cachedLoggers;
+        List<Type> _exceptionsIgnoreForHandlingList; 
 
         public DefaultExceptionConfiguration(IAppConfig appConfig)
         {
@@ -18,6 +19,7 @@ namespace Omission.Framework
             _loggerEntries = new Dictionary<string, IExceptionLogger>();
             _cachedHandlers = new Dictionary<Type, IExceptionHandler>();
             _cachedLoggers = new Dictionary<Type, IExceptionLogger>();
+            _exceptionsIgnoreForHandlingList = new List<Type>();
 
             GenericWindowsHandler genericHandler = new GenericWindowsHandler(appConfig);
 
@@ -94,6 +96,23 @@ namespace Omission.Framework
             return this;
         }
 
+        public IExceptionConfiguration IgnoreExceptionForHandling<TExceptionType>() where TExceptionType : Exception
+        {
+            _lastExceptionType = typeof (TExceptionType);
+
+            if(!_exceptionsIgnoreForHandlingList.Contains(typeof(TExceptionType)))
+            {
+                _exceptionsIgnoreForHandlingList.Add(typeof(TExceptionType));
+            }
+
+            return this;
+        }
+
+        public bool ShouldIgnoreForHandling(Type exceptionType)
+        {
+            return _exceptionsIgnoreForHandlingList.Contains(exceptionType);
+        }
+
         public IExceptionConfiguration AndAlso(IExceptionLogger logger)
         {
             string loggerKey = GetLoggerKey(_lastExceptionType, logger.GetType());
@@ -107,12 +126,15 @@ namespace Omission.Framework
         {
             IExceptionHandler resultHandler = null;
 
-            foreach (var entry in _handlerEntries)
+            if (!_exceptionsIgnoreForHandlingList.Contains(exceptionType))
             {
-                if (entry.Key == exceptionType)
+                foreach (var entry in _handlerEntries)
                 {
-                    resultHandler = entry.Value;
-                    break;
+                    if (entry.Key == exceptionType)
+                    {
+                        resultHandler = entry.Value;
+                        break;
+                    }
                 }
             }
 

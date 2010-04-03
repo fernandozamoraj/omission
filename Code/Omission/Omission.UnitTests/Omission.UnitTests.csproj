@@ -59,7 +59,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Core\Omission.Framework.csproj">
+    <ProjectReference Include="..\Framework\Omission.Framework.csproj">
       <Project>{7BDB484D-C8F8-4F0B-9F85-61530D6FCFCB}</Project>
       <Name>Omission.Framework</Name>
     </ProjectReference>
