@@ -1,4 +1,3 @@
-using System;
 using Omission.Framework;
 
 namespace Omission.UnitTests

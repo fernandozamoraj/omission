@@ -49,9 +49,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppConfig.cs" />
+    <Compile Include="Logging\LogEmailer.cs" />
+    <Compile Include="Model\ExceptionLauncher.cs" />
     <Compile Include="Exceptions\MyUglyErrorMessageHandler.cs" />
     <Compile Include="Exceptions\QuietException.cs" />
-    <Compile Include="Exceptions\LogOnlyExceptionHandler.cs" />
     <Compile Include="Exceptions\UglyException.cs" />
     <Compile Include="FileNameCreator.cs" />
     <Compile Include="OmissionDemoBaseException.cs" />
@@ -86,16 +87,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Model\WrappedException.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Core\Omission.Framework.csproj">
+    <ProjectReference Include="..\Framework\Omission.Framework.csproj">
       <Project>{7BDB484D-C8F8-4F0B-9F85-61530D6FCFCB}</Project>
       <Name>Omission.Framework</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Environment\" />
-    <Folder Include="Logging\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
