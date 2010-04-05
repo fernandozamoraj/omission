@@ -19,6 +19,7 @@ namespace Omission.WindowsDemo.Model
             _exceptions.Add(new WrappedException(new UglyException("This is one ugly exception! Ooooweee!")));
             _exceptions.Add(new WrappedException(new QuietException("Shh... quiet!")));
             _exceptions.Add(new WrappedException(new ArgumentOutOfRangeException("Count", "Out of range")));
+            _exceptions.Add(new WrappedException(new RockyException()));
         }
 
         public List<WrappedException> GetExceptions()

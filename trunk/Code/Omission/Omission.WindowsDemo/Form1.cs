@@ -53,17 +53,11 @@ namespace Omission.WindowsDemo
             var configuration =
                 OmissionFacade.GetExceptionHandler().GetExceptionConfiguration();
 
-            List<IExceptionLogger> loggers = new List<IExceptionLogger>();
-
-            
-
             IExceptionLogger fileLogger = new SimpleFileLogger(new FileNameCreator().GetFilePath("SilentLogger"),
                                                            new OmissionDateTime(),
                                                            new AppConfig(),
                                                            new FileSystem(),
                                                            new OStreamWriter());
-            
-            loggers.Add(fileLogger);
 
             OmissionFacade.GetExceptionHandler().DefaultLogger = this;
 
@@ -71,12 +65,15 @@ namespace Omission.WindowsDemo
                 .MapExceptionToHandler<UglyException>(new MyUglyErrorMessageHandler())
                 .With(this)
                 .AndAlso(new LogEmailer(new []{"fz@hotmail.com", "bib@yahoo.com"}))
+                .AndAlso(fileLogger)
 
+                //.IgnoreExceptionForHandling<QuietException>()
                 .IgnoreExceptionForHandling<QuietException>()
                 .With(this)
                 .AndAlso(new LogEmailer(new []{"fz@gmail.com", "jz@gmail.com"}))
                 .AndAlso(new Log4NetLogger())
                 .MapExceptionToLogger<Exception>(this);
+                
         }
 
         void LoadExceptions()
