@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
-using log4net.Appender;
-using log4net.Core;
-using log4net.Repository;
 using Omission.Framework;
 using Omission.Framework.Environment;
 using Omission.Framework.Logging;
