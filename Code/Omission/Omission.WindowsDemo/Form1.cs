@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using log4net.Appender;
+using log4net.Core;
+using log4net.Repository;
 using Omission.Framework;
 using Omission.Framework.Environment;
 using Omission.Framework.Logging;
@@ -72,7 +75,7 @@ namespace Omission.WindowsDemo
                 .IgnoreExceptionForHandling<QuietException>()
                 .With(this)
                 .AndAlso(new LogEmailer(new []{"fz@gmail.com", "jz@gmail.com"}))
-              
+                .AndAlso(new Log4NetLogger())
                 .MapExceptionToLogger<Exception>(this);
         }
 
