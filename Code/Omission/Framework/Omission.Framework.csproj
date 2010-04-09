@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -57,6 +58,12 @@
     <Compile Include="MasterExceptionHandler.cs" />
     <Compile Include="DefaultExceptionConfiguration.cs" />
     <Compile Include="ExceptionHandlingResult.cs" />
+    <Compile Include="SettingsModel\OmissionSettings.cs" />
+    <Compile Include="Settings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings1.settings</DependentUpon>
+    </Compile>
     <Compile Include="Windows\GenericWindowsHandler.cs" />
     <Compile Include="IAppConfig.cs" />
     <Compile Include="IExceptionHandler.cs" />
@@ -64,6 +71,13 @@
     <Compile Include="IExceptionConfiguration.cs" />
     <Compile Include="Logging\EventLogLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Settings1.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Web\" />
