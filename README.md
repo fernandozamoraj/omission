@@ -1,5 +1,5 @@
 # omission
-omission is an exception handler framework.
+omission is a .net exception handling framework.
 
 Handling exceptions in your application can get unrully and can become quite a jungle of many different approaches.  
 
